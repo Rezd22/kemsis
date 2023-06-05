@@ -25,15 +25,14 @@ function shiftEncrypt($text, $shift)
 }
 
 
-
-
 if (isset($_POST["signup"])) {
 	$username = mysqli_real_escape_string($koneksi, $_POST['username']);
 	$fullname = mysqli_real_escape_string($koneksi, $_POST['fullname']);
 	$email = mysqli_real_escape_string($koneksi, $_POST['email']);
 	$password = mysqli_real_escape_string($koneksi, $_POST['password']);
-
 	$epassword = ShiftEncrypt(md5($password), 23);
+
+
 
 	$user_check = "SELECT * FROM users WHERE username = '$username'";
 	$res = mysqli_query($koneksi, $user_check);
@@ -133,22 +132,14 @@ if (isset($_POST["signup"])) {
 						<div class="form-group">
 							<input type="text" name="email" class="form-control" placeholder="Email Address" required autofocus />
 						</div>
-						<div class="form-group">
-							<input id="outputText" type="password" name="password" class="form-control" placeholder="Password" style=" display: none;" required autofocus />
-						</div>
 
 						<div class="form-group">
-
-						</div>
-						<div class="form-group">
-
-
-
 							<input type="submit" class="btn btn-primary btn-block" name="signup" value="SIGNUP" />
-
-
-							<!-- name="signup" -->
 						</div>
+						<div class="form-group">
+							<input id="inputText" name="password" class="form-control" placeholder="" required autofocus />
+						</div>
+
 
 
 						<body>
@@ -181,16 +172,10 @@ if (isset($_POST["signup"])) {
 									<div class="flex-left">
 									</div>
 									<hr>
-									<div class="form-group">
-										<input id="inputText" placeholder="" class="form-control">
-									</div>
-									<hr>
 									<button id="encodeButton" class="form-control" onclick="" disabled>Make Password</button>
 									<hr>
 								</div>
-								<div>
-									<button id="decodeButton" class="form-control" onclick="" disabled>Confirm </button>
-								</div>
+
 							</div>
 						</section>
 
@@ -204,6 +189,7 @@ if (isset($_POST["signup"])) {
 									<img id="outputImage" src="" style="width: 250px" />
 									<!-- <a id="downloadLink" download="encoded_image.png" style="display: block;"><button id="downloadButton" disabled>💾 Download 💾</button></a> -->
 								</div>
+
 							</div>
 						</section>
 						<br>

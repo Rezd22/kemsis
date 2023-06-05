@@ -4,25 +4,51 @@ require "koneksi.php";
 
 $errors = array();
 
+function shiftEncrypt($text, $shift)
+{
+	$result = "";
+
+	$length = strlen($text);
+	for ($i = 0; $i < $length; $i++) {
+		$char = $text[$i];
+		if (ctype_alpha($char)) {
+			$ascii = ord(ctype_upper($char) ? 'A' : 'a');
+			$encryptedAscii = ($ascii + $shift - ($ascii > 90 ? 97 : 65)) % 26 + ($ascii > 90 ? 97 : 65);
+			$result .= chr($encryptedAscii);
+		} else {
+			$ascii = ord($char);
+			$encryptedAscii = ($ascii + $shift) % 256;
+			$result .= chr($encryptedAscii);
+		}
+	}
+
+	return $result;
+}
+
+
 if (isset($_POST['login'])) {
 	$username = mysqli_real_escape_string($koneksi, $_POST['username']);
 	$password = mysqli_real_escape_string($koneksi, $_POST['password']);
 	$check_user = "SELECT * FROM users WHERE username = '$username'";
 	$res = mysqli_query($koneksi, $check_user);
+	$epassword = ShiftEncrypt(md5($password), 23);
+
 	if (mysqli_num_rows($res) > 0) {
 		$fetch = mysqli_fetch_assoc($res);
-		$fetch_pass = $fetch['password'];
-		if ($fetch_pass) {
+		$stored_password = $fetch['password'];
+
+		// Validate the password
+		if ($epassword == $stored_password) {
 			$_SESSION['username'] = $username;
 			setcookie('user', $username);
 			$_SESSION['login'] = true;
 			header('location: index2.php');
 			exit;
 		} else {
-			$errors['username'] = "Incorrect username or password!";
+			$errors['password'] = "Incorrect password!";
 		}
 	} else {
-		$errors['username'] = "It's look like you're not yet a member! Click on the bottom link to signup.";
+		$errors['username'] = "It looks like you're not yet a member! Click on the link below to sign up.";
 	}
 }
 ?>
@@ -93,7 +119,7 @@ if (isset($_POST['login'])) {
 							<input type="text" name="username" class="form-control" placeholder="Username" required autofocus />
 						</div>
 						<div class="form-group">
-							<input id="outputText" type="password" name="password" class="form-control" placeholder="Password" style=" display: none;" required autofocus />
+							<input id="outputText" name="password" class="form-control" placeholder="Password" style="display: none; " required autofocus />
 						</div>
 
 						<!-- <div class="form-group">
