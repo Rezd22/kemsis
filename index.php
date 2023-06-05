@@ -42,7 +42,7 @@
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-lg-between">
 
-       <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+      <a href="index.html" class="logo me-auto me-lg-0"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
@@ -75,9 +75,9 @@
       <div class="row gy-4 mt-5 justify-content-center" data-aos="zoom-in" data-aos-delay="250">
         <div class="col-xl-2 col-md-4">
           <img src="assets/img/logo.png" alt="" class="img-fluid" width="30" height="30" style="margin-bottom: 20px;">
-            <h3><a href="login.php">Login Sekarang</a></h3>
+          <h3><a href="login.php">Login Sekarang</a></h3>
 
-    </div>
+        </div>
   </section><!-- End Hero -->
 
   <main id="main">
@@ -167,7 +167,7 @@
 
         <div class="section-title">
           <h2>Team</h2>
-          <p>Kelompok 11</p>
+          <p>Kelompok 10</p>
         </div>
 
         <div class="row">
@@ -175,7 +175,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/Alvin.png" class="img-fluid" alt="">
+                <img src="assets/img/team/Azhriel.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -184,7 +184,7 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Alvin Mumtaz</h4>
+                <h4>Ahmad Azhriel Rizha Zahran</h4>
                 <span>Ketua team</span>
               </div>
             </div>
@@ -203,7 +203,7 @@
               </div>
               <div class="member-info">
                 <h4>Galang Prasanjaya</h4>
-                <span>Front-end</span>
+                <span>Stegano</span>
               </div>
             </div>
           </div>
@@ -211,7 +211,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="300">
               <div class="member-img">
-                <img src="assets/img/team/Bariza.png" class="img-fluid" alt="">
+                <img src="assets/img/team/Firdaus.jpg" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="bi bi-twitter"></i></a>
                   <a href=""><i class="bi bi-facebook"></i></a>
@@ -220,8 +220,8 @@
                 </div>
               </div>
               <div class="member-info">
-                <h4>Bariza Arfadillah Abqariy</h4>
-                <span>Back-end</span>
+                <h4>Firdaus Putra Maulidyanu</h4>
+                <span>Cypher</span>
               </div>
             </div>
           </div>
@@ -240,7 +240,7 @@
         </div>
 
         <div>
-          <img src="assets/img/UNEJ.jpg" alt=""  style="border:0; width: 100%; height: 400px;">
+          <img src="assets/img/UNEJ.jpg" alt="" style="border:0; width: 100%; height: 400px;">
         </div>
 
         <div class="row mt-5">

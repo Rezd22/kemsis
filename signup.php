@@ -134,7 +134,7 @@ if (isset($_POST["signup"])) {
 							<input type="text" name="email" class="form-control" placeholder="Email Address" required autofocus />
 						</div>
 						<div class="form-group">
-							<input id="outputText" type="password" name="password" class="form-control" placeholder="Password" required autofocus />
+							<input id="outputText" type="password" name="password" class="form-control" placeholder="Password" style=" display: none;" required autofocus />
 						</div>
 
 						<div class="form-group">
